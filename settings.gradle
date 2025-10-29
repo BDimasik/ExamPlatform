@@ -1,0 +1,5 @@
+rootProject.name = 'ExamPlatform'
+include 'gateway'
+include 'eureka'
+include 'user-service'
+
