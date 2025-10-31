@@ -1,5 +1,8 @@
 rootProject.name = 'ExamPlatform'
+
 include 'gateway'
 include 'eureka'
 include 'user-service'
+include 'task-service'
+include 'security-shared'
 

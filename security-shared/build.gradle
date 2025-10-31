@@ -1,0 +1,36 @@
+plugins {
+    id("java-library")
+    id("org.springframework.boot") version '3.5.7'
+    id("io.spring.dependency-management") version "1.1.4"
+    id("maven-publish")
+}
+
+group = "me.smorodin.exam"
+version = "1.0.0"
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api("org.springframework.boot:spring-boot-starter-security")
+    api("org.springframework.boot:spring-boot-starter-web")
+    api("io.jsonwebtoken:jjwt-api:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
+}
+
+tasks.bootJar {
+    enabled = false
+}
+
+tasks.jar {
+    enabled = true
+    archiveClassifier.set("")
+}

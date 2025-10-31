@@ -6,6 +6,10 @@ spring:
     name: api-gateway
   cloud:
     gateway:
+      httpserver:
+        wiretap: true
+      httpclient:
+        wiretap: true
       discovery:
         locator:
           enabled: true
@@ -14,6 +18,10 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/api/users/**, /api/auth/**
+        - id: task-service
+          uri: lb://TASK-SERVICE
+          predicates:
+            - Path=/api/task/**
 
 eureka:
   client:
