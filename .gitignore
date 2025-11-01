@@ -40,3 +40,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+docker/**/*
+!docker/**/docker-compose.yml
+!docker/*/
